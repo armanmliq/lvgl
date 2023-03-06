@@ -1,0 +1,4 @@
+y = 0 - 1000
+x = 1935 - 4050
+
+https://blog.xuite.net/iamleon/blog/590572145#
