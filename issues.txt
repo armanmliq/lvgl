@@ -1,0 +1,7 @@
+y = 0 - 1000
+x = 1935 - 4050
+
+https://blog.xuite.net/iamleon/blog/590572145#
+the touchscreen cant work properly when wifi active,
+this because if you use some adc2 pin to wire to lcd,
+change that to another adc channel

@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "arduino.h": "c",
+    "ui_comp.h": "c",
+    "ui.h": "c",
+    "debug.hpp": "c",
+    "deque": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "array": "cpp",
+    "map": "cpp",
+    "*.tcc": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
+}

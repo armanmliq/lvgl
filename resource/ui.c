@@ -1,0 +1,124 @@
+// SquareLine LVGL GENERATED FILE
+// EDITOR VERSION: SquareLine Studio 1.1.1
+// LVGL VERSION: 8.3.3
+// PROJECT: lvgl_1_test
+
+#include "ui.h"
+#include "ui_helpers.h"
+
+///////////////////// VARIABLES ////////////////////
+lv_obj_t * ui_Screen1;
+lv_obj_t * ui_textPrimaryTitle;
+lv_obj_t * ui_spinner1;
+lv_obj_t * ui_textSecondaryTitle;
+lv_obj_t * ui_textEmail;
+lv_obj_t * ui_textPass;
+lv_obj_t * ui_btnEnter;
+lv_obj_t * ui_btnEnterLabel;
+lv_obj_t * ui_kb;
+
+///////////////////// TEST LVGL SETTINGS ////////////////////
+#if LV_COLOR_DEPTH != 16
+    #error "LV_COLOR_DEPTH should be 16bit to match SquareLine Studio's settings"
+#endif
+#if LV_COLOR_16_SWAP !=0
+    #error "LV_COLOR_16_SWAP should be 0 to match SquareLine Studio's settings"
+#endif
+
+///////////////////// ANIMATIONS ////////////////////
+
+///////////////////// FUNCTIONS ////////////////////
+
+///////////////////// SCREENS ////////////////////
+void ui_Screen1_screen_init(void)
+{
+    ui_Screen1 = lv_obj_create(NULL);
+    lv_obj_clear_flag(ui_Screen1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_textPrimaryTitle = lv_label_create(ui_Screen1);
+    lv_obj_set_width(ui_textPrimaryTitle, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_textPrimaryTitle, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_textPrimaryTitle, -88);
+    lv_obj_set_y(ui_textPrimaryTitle, -205);
+    lv_obj_set_align(ui_textPrimaryTitle, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_textPrimaryTitle, "Farm io");
+    lv_obj_set_style_text_color(ui_textPrimaryTitle, lv_color_hex(0xA1AFB8), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_textPrimaryTitle, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_textPrimaryTitle, &lv_font_montserrat_28, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_spinner1 = lv_spinner_create(ui_Screen1, 1000, 90);
+    lv_obj_set_width(ui_spinner1, 40);
+    lv_obj_set_height(ui_spinner1, 42);
+    lv_obj_set_x(ui_spinner1, 123);
+    lv_obj_set_y(ui_spinner1, -206);
+    lv_obj_set_align(ui_spinner1, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_spinner1, LV_OBJ_FLAG_CLICKABLE);      /// Flags
+    lv_obj_set_style_arc_width(ui_spinner1, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    lv_obj_set_style_arc_width(ui_spinner1, 5, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+
+    ui_textSecondaryTitle = lv_label_create(ui_Screen1);
+    lv_obj_set_width(ui_textSecondaryTitle, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_textSecondaryTitle, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_textSecondaryTitle, -106);
+    lv_obj_set_y(ui_textSecondaryTitle, -177);
+    lv_obj_set_align(ui_textSecondaryTitle, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_textSecondaryTitle, "sign in");
+    lv_obj_set_style_text_color(ui_textSecondaryTitle, lv_color_hex(0xA1AFB8), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_textSecondaryTitle, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_textSecondaryTitle, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_textEmail = lv_textarea_create(ui_Screen1);
+    lv_obj_set_width(ui_textEmail, 296);
+    lv_obj_set_height(ui_textEmail, LV_SIZE_CONTENT);    /// 33
+    lv_obj_set_x(ui_textEmail, 0);
+    lv_obj_set_y(ui_textEmail, -119);
+    lv_obj_set_align(ui_textEmail, LV_ALIGN_CENTER);
+    lv_textarea_set_placeholder_text(ui_textEmail, "Email");
+    lv_textarea_set_one_line(ui_textEmail, true);
+
+    ui_textPass = lv_textarea_create(ui_Screen1);
+    lv_obj_set_width(ui_textPass, 296);
+    lv_obj_set_height(ui_textPass, LV_SIZE_CONTENT);    /// 33
+    lv_obj_set_x(ui_textPass, 0);
+    lv_obj_set_y(ui_textPass, -66);
+    lv_obj_set_align(ui_textPass, LV_ALIGN_CENTER);
+    lv_textarea_set_placeholder_text(ui_textPass, "Pass");
+    lv_textarea_set_one_line(ui_textPass, true);
+    lv_textarea_set_password_mode(ui_textPass, true);
+
+    ui_btnEnter = lv_btn_create(ui_Screen1);
+    lv_obj_set_width(ui_btnEnter, 202);
+    lv_obj_set_height(ui_btnEnter, 49);
+    lv_obj_set_x(ui_btnEnter, 2);
+    lv_obj_set_y(ui_btnEnter, 11);
+    lv_obj_set_align(ui_btnEnter, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_btnEnter, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_btnEnter, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_btnEnterLabel = lv_label_create(ui_btnEnter);
+    lv_obj_set_width(ui_btnEnterLabel, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_btnEnterLabel, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_btnEnterLabel, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_btnEnterLabel, "Sign In");
+
+    ui_kb = lv_keyboard_create(ui_Screen1);
+    lv_obj_set_width(ui_kb, 318);
+    lv_obj_set_height(ui_kb, 211);
+    lv_obj_set_x(ui_kb, -1);
+    lv_obj_set_y(ui_kb, 117);
+    lv_obj_set_align(ui_kb, LV_ALIGN_CENTER);
+
+    lv_keyboard_set_textarea(ui_kb, ui_textEmail);
+
+}
+
+void ui_init(void)
+{
+    lv_disp_t * dispp = lv_disp_get_default();
+    lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
+                                               true, LV_FONT_DEFAULT);
+    lv_disp_set_theme(dispp, theme);
+    ui_Screen1_screen_init();
+    lv_disp_load_scr(ui_Screen1);
+}

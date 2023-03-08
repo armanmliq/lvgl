@@ -46,7 +46,7 @@ const int coords[] = {3600, 370, 80, 4000}; // portrait - left, right, top, bott
 
 const int rotation = 0; //  in rotation order - portrait, landscape, etc
 
-const int XP = 21, XM = 12, YP = 14, YM = 22; // default ESP32 Uno touchscreen pins
+const int XP = 21, XM = 32, YP = 33, YM = 22; // default ESP32 Uno touchscreen pins
 TouchScreen ts = TouchScreen(XP, YP, XM, YM, 500);
 boolean Touch_getXY(uint16_t *x, uint16_t *y, boolean showTouch)
 {
