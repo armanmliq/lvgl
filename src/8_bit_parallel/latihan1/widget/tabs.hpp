@@ -1,14 +1,15 @@
 
-void createTabView()
+void createTabViewSc3()
 {
-  lv_obj_t *tabview;
+
+
   tabview = lv_tabview_create(ui_Screen3, LV_DIR_TOP, 50);
 
-  lv_obj_t *tab1 = lv_tabview_add_tab(tabview, "Tab 1");
-  lv_obj_t *tab2 = lv_tabview_add_tab(tabview, "Tab 2");
-  lv_obj_t *tab3 = lv_tabview_add_tab(tabview, "Tab 3");
+  tab1 = lv_tabview_add_tab(tabview, "Tab 1");
+  tab2 = lv_tabview_add_tab(tabview, "Tab 2");
+  tab3 = lv_tabview_add_tab(tabview, "Tab 3");
 
-  lv_obj_t *label = lv_label_create(tab1);
+  label = lv_label_create(tab1);
   lv_label_set_text(label, "This the first tab\n\n"
                            "If the content\n"
                            "of a tab\n"
@@ -40,6 +41,7 @@ void createTabView()
                            "injected humour, or non-characteristic words etc.");
   label = lv_label_create(tab2);
   lv_label_set_text(label, "Second tab");
+  createBtnBackTabview2();
   label = lv_label_create(tab3);
   lv_label_set_text(label, "Third tab");
   lv_obj_scroll_to_view_recursive(label, LV_ANIM_ON);

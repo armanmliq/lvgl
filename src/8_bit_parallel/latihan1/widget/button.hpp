@@ -22,6 +22,14 @@ void callbackBtnDetail(lv_event_t *e)
     lv_obj_del_async(ui_Screen2);
 }
 
+void callbackBtnBackTab2(lv_event_t *e)
+{
+    debugln("callbackBtnBackTab2");
+    ui_Screen2_screen_init();
+    lv_scr_load(ui_Screen2);
+    lv_obj_del_async(ui_Screen3);
+}
+
 void createBtnEnter(void)
 {
     // ADD BUTTON ENTER
@@ -80,4 +88,24 @@ void createBtnDetail(void)
     lv_obj_set_height(ui_btnDetailLabel, LV_SIZE_CONTENT); /// 1
     lv_obj_set_align(ui_btnDetailLabel, LV_ALIGN_CENTER);
     lv_label_set_text(ui_btnDetailLabel, "Detail");
+}
+
+void createBtnBackTabview2(void)
+{
+    // ADD BUTTON ENTER
+    ui_btnBackTab2 = lv_btn_create(tab2);
+    lv_obj_set_width(ui_btnBackTab2, 100);
+    lv_obj_set_height(ui_btnBackTab2, 50);
+    lv_obj_set_x(ui_btnBackTab2, -64);
+    lv_obj_set_y(ui_btnBackTab2, 197);
+    lv_obj_set_align(ui_btnBackTab2, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_btnBackTab2, LV_OBJ_FLAG_SCROLL_ON_FOCUS); /// Flags
+    lv_obj_clear_flag(ui_btnBackTab2, LV_OBJ_FLAG_SCROLLABLE);    /// Flags
+    lv_obj_add_event_cb(ui_btnBackTab2, callbackBtnBackTab2, LV_EVENT_PRESSED, ui_btnBackTab2);
+
+    ui_btnBackTab2Label = lv_label_create(ui_btnBackTab2);
+    lv_obj_set_width(ui_btnBackTab2Label, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_btnBackTab2Label, LV_SIZE_CONTENT); /// 1
+    lv_obj_set_align(ui_btnBackTab2Label, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_btnBackTab2Label, "Back");
 }

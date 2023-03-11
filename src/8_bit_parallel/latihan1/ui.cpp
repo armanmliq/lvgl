@@ -14,6 +14,7 @@ void ui_Screen2_screen_init(void);
 void ui_Screen1_screen_init(void);
 void callbackTextArea(lv_event_t *e);
 void lv_example_chart_1(void);
+void createBtnBackTabview2(void);
 
 ///////////////////// VARIABLES ////////////////////
 lv_obj_t *ui_btnDetail;
@@ -39,6 +40,13 @@ lv_obj_t *lmeter2;
 lv_obj_t *ui_chart1;
 lv_obj_t *arc1Label;
 lv_obj_t *arc2Label;
+lv_obj_t *tabview;
+lv_obj_t *tab1;
+lv_obj_t *tab2;
+lv_obj_t *tab3;
+lv_obj_t *label;
+lv_obj_t *ui_btnBackTab2;
+lv_obj_t *ui_btnBackTab2Label;
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 
 #include "service/debug.hpp"
@@ -46,6 +54,7 @@ lv_obj_t *arc2Label;
 #include "widget/button.hpp"
 #include "widget/arc.hpp"
 #include "widget/tabs.hpp"
+#include "service/timer.hpp"
 
 #if LV_COLOR_DEPTH != 16
 #error "LV_COLOR_DEPTH should be 16bit to match SquareLine Studio's settings"
@@ -53,6 +62,11 @@ lv_obj_t *arc2Label;
 #if LV_COLOR_16_SWAP != 0
 #error "LV_COLOR_16_SWAP should be 0 to match SquareLine Studio's settings"
 #endif
+
+void callbackDebug(const char *buf)
+{
+    debug(String(buf));
+}
 
 void lv_example_chart_1(void)
 {
@@ -207,13 +221,13 @@ void ui_Screen3_screen_init(void)
 {
     ui_Screen3 = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Screen3, LV_OBJ_FLAG_SCROLLABLE); /// Flags
-    createTabView();
+    createTabViewSc3();
 }
 
 void ui_init(void)
 {
     LV_EVENT_GET_COMP_CHILD = lv_event_register_id();
-
+    lv_log_register_print_cb(callbackDebug);
     lv_disp_t *dispp = lv_disp_get_default();
     lv_theme_t *theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
                                               true, LV_FONT_DEFAULT);

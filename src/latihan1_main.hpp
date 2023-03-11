@@ -93,15 +93,16 @@ boolean Touch_getXY(uint16_t *x, uint16_t *y, boolean showTouch)
 // ###########################################################################################################
 void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
 {
-  uint32_t w = (area->x2 - area->x1 + 1);
-  uint32_t h = (area->y2 - area->y1 + 1);
+    uint32_t w = (area->x2 - area->x1 + 1);
+    uint32_t h = (area->y2 - area->y1 + 1);
+    uint32_t wh = w*h;
 
-  tft.startWrite();
-  tft.setAddrWindow(area->x1, area->y1, w, h);
-  tft.pushColors((uint16_t *)&color_p->full, w * h, true);
-  tft.endWrite();
+    tft.startWrite();
+    tft.setAddrWindow(area->x1, area->y1, w, h);
+    while (wh--) tft.pushColor(color_p++->full);
+    tft.endWrite();
 
-  lv_disp_flush_ready(disp);
+    lv_disp_flush_ready(disp);
 }
 
 // ###########################################################################################################
@@ -155,8 +156,7 @@ void my_touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data)
 // ###########################################################################################################
 void setup()
 {
-  // WiFi.mode(WIFI_MODE_STA);
-  // WiFi.begin("AMI","admin.admin");
+
   Serial.begin(115200); /* prepare for possible serial debug */
   debugln("begin");
   tft.begin();        /* TFT init */
