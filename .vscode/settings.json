@@ -11,7 +11,12 @@
     "vector": "cpp",
     "array": "cpp",
     "map": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "memory": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "functional": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

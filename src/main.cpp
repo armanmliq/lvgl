@@ -14,4 +14,6 @@
 // #include "UTFT_Demo_480x320/UTFT_Demo_480x320.hpp"
 // #include "Touch_calibrate/Touch_calibrate.hpp"
 // #include "DynamicWIFIConnector_LVGL7/DynamicWIFIConnector_LVGL7.hpp"
-#include "3_BaseProject_Network_Selector/3_BaseProject_Network_Selector.hpp"
+// #include "ili9488_spi/network_selector/network_selector.hpp"
+#include "ili9488_spi/load_image/main.hpp"
+// #include "sdcard/sdcard.hpp"
