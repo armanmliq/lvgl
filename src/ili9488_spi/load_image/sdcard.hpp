@@ -153,6 +153,5 @@ void lvgl_fs_test(void)
     }
 
     ESP_LOGI(TAG,"READ(%d): %s",rsize , rbuf);
-
     lv_fs_close(&fd);
 }

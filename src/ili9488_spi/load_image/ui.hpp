@@ -42,3 +42,46 @@ void setStyle()
   lv_style_set_border_color(&popupBox_style, lv_palette_main(LV_PALETTE_BLUE));
   lv_style_set_border_width(&popupBox_style, 5);
 }
+void load_image_jiraiya(lv_obj_t *screen)
+{
+  LV_IMG_DECLARE(jiaraiya);
+  lv_obj_t *img = lv_img_create(screen);
+  lv_img_set_src(img, &jiaraiya);
+  lv_obj_align(img, LV_ALIGN_CENTER, 0, 0);
+  lv_obj_set_size(img, 480, 320);
+}
+void load_image_facebook(lv_obj_t *screen)
+{
+  LV_IMG_DECLARE(facebook);
+  lv_obj_t *img = lv_img_create(screen);
+  lv_img_set_src(img, &facebook);
+  lv_obj_align(img, LV_ALIGN_CENTER, 0, 0);
+  lv_obj_set_size(img, 50, 50);
+}
+void load_image_water(lv_obj_t *screen)
+{
+  LV_IMG_DECLARE(water_pump);
+  lv_obj_t *img = lv_img_create(screen);
+  lv_obj_align(img, LV_ALIGN_CENTER, 50, 100);
+  lv_img_set_src(img, &water_pump);
+  lv_obj_set_size(img, 200, 200);
+  // lv_label_set_text(timeLabel, "WiFi Not Connected!    ");
+  // lv_obj_align(timeLabel, LV_ALIGN_LEFT_MID, 8, 4);
+}
+void load_image_hero(lv_obj_t *screen)
+{
+  LV_IMG_DECLARE(hero);
+  lv_obj_t *img = lv_img_create(screen);
+  lv_img_set_src(img, &hero);
+  lv_obj_align(img, LV_ALIGN_CENTER, 0, 0);
+  lv_obj_set_size(img, 100, 100);
+}
+
+void buildBody()
+{
+  lv_obj_t *bodyScreen = lv_obj_create(lv_scr_act());
+  lv_obj_add_style(bodyScreen, &border_style, 0);
+  lv_obj_set_size(bodyScreen, tft.width(), tft.height());
+  lv_obj_align(bodyScreen, LV_ALIGN_BOTTOM_MID, 0, 0);
+  load_image_hero(bodyScreen);
+}
